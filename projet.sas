@@ -33,6 +33,11 @@ PROC IMPORT DATAFILE="/home/u62535957/projetM2/carcteristiques-2022.csv"
     GUESSINGROWS=2790;
 RUN;
 
+/* 1) Nombre d'accidents par départemetns*/
+proc freq data=work.table ;
+	TABLES departement / OUT=table_freq_departement;
+RUN;
+
 /* 2) Nb d'accident en marne en decembre /et le 23 decembre*/
 
 proc sql ;
